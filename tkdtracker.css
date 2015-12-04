@@ -1,0 +1,40 @@
+ul {
+	list-style-type: none;
+}
+
+li input {
+    /*display: none;*/
+}
+
+li.edit span {
+    /*display: none;*/
+}
+
+li.edit input {
+    /*display: initial;*/
+}
+
+.btn:hover {
+	color:blue;
+}
+
+.btn-info {
+	color:white;
+}
+
+#listOBelts button {
+	text-align: center;
+	width:10em;
+}
+
+#firstNameData, #lastNameData, #emailData, #beltData, #IDArtistData {
+	text-align: center;
+	width:10em;
+}
+
+.dropdown-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
