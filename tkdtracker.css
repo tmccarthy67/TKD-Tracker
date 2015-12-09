@@ -27,7 +27,7 @@ li.edit input {
 	width:10em;
 }
 
-#firstNameData, #lastNameData, #emailData, #beltData, #IDArtistData {
+#firstNameData, #lastNameData, #emailData, #beltData, #IDArtistData, #ArtistNumber, #artistName, #artistBelt {
 	text-align: center;
 	width:10em;
 }

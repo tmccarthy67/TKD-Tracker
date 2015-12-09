@@ -1,5 +1,6 @@
 var currentCity;
 var currentDate;
+var artistAttendance = [];
 
 if(geo_position_js.init()){
 		geo_position_js.getCurrentPosition(success_callback,error_callback,{enableHighAccuracy:true});
@@ -18,6 +19,12 @@ function success_callback(p) {
 	//get time
 	getTime();
 	console.log(currentDate);
+	artistAttendance = {
+	attendDate: currentDate,
+	attendPlace: currentCity
+	};
+	console.log(artistAttendance);
+	// console.log(artist);
 }
 
 function error_callback(p) {
