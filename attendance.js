@@ -51,7 +51,7 @@ function loadArtistByNumber (artistID, artistIDList) {
 
 	// verify submit button
 	$( "#verifyArtistSubmit" ).click(function( event ) {
-	  // event.preventDefault();
+	  event.preventDefault();
 	  console.log("Verify Clicked");
 	  //get location
   return;
@@ -86,6 +86,7 @@ function getCurrentArtist(artistIDList) {
 	}
 	// console.log(artistIDList);
 	// console.log(artistID);
+	return;
 }
 
 function getUpdatedArtistList() {
@@ -107,10 +108,6 @@ function getUpdatedArtistList() {
 $(function() {
 	console.log("get Artist Number");
 
-	function getIDNumber (){
-		console.log("get ID number");
-	}
-
 	// submit button
 	$( "#getArtistNumber" ).submit(function( event ) {
 	  event.preventDefault();
@@ -121,7 +118,6 @@ $(function() {
 
 	// artist data
   getUpdatedArtistList();
-
 	});
 
 
