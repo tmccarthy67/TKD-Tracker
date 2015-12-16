@@ -14,12 +14,85 @@ var newArtistID = {};
 var artistEntered;
 var artistNumberEntered;
 var artistData = [];
+var currentCity;
+var currentDate;
+var artistAttendance = [];
+var attendanceData = [];
+var attendanceCounter = 0;
 
 console.log(artistID);
 if (artistID = []) {
 	  $('#getArtistNumber').show();
     $('#verifyCurrentArtist').hide();
 }
+
+Object.values = function(object) {
+  var values = [];
+  for(var property in object) {
+    values.push(object[property]);
+  }
+  return values;
+}
+
+function getArtistLocation () {
+	// console.log("getArtistLocation");
+	if(geo_position_js.init()){
+		geo_position_js.getCurrentPosition(success_callback,error_callback,{enableHighAccuracy:true});
+	}
+	else{
+		console.log("Functionality not available");
+	}
+
+	function success_callback(p) {
+		console.log("success_callback");
+		// console.log('lat='+p.coords.latitude.toFixed(2)+';lon='+p.coords.longitude.toFixed(2));
+		var latitude = p.coords.latitude.toFixed(2);
+		var longitude = p.coords.longitude.toFixed(2);
+		//check location
+		checkLocation(latitude, longitude);
+		console.log(currentCity);
+		//get time
+		getTime();
+		console.log(currentDate);
+
+		artistAttendance = {
+				attendDate: currentDate,
+				attendPlace: currentCity
+		};
+		console.log(artistAttendance);
+		// console.log(artist);
+		return (artistAttendance);
+	};
+
+	function error_callback(p) {
+		alert('error='+p.code);
+	};
+
+	function getTime () {
+		// Display the month, day, and year
+		currentDate = moment().format("MMMM DD YYYY")
+		// console.log(currentDate);
+		return currentDate;
+	};
+
+	function checkLocation(latitude, longitude) {
+		// ainsworthIA = {41.2903, -91.5542};
+		// columbusJunctionIA = {41.2783, -91.3625};
+		// lat=41.29;lon=-91.55
+		// console.log("longitude " + longitude);
+		// console.log("latitude " + latitude);
+		if (latitude > 41.28 && latitude < 41.30 && longitude > -91.56 && longitude < -91.54) {
+			currentCity = "Ainsworth";
+			// console.log(currentCity);
+			return currentCity;
+		};
+		if (latitude > 41.26 && latitude < 41.38 && longitude > -91.37 && longitude < -91.35) {
+			currentCity = "Columbus Junction";
+			// console.log(currentCity);
+			return currentCity;
+		};
+	};
+};
 
 function checkArtist(artistID, artistIDList) {
 	artistData = artistIDList[artistID];
@@ -30,8 +103,8 @@ function checkArtist(artistID, artistIDList) {
 	  $('#getArtistNumber').hide();
     $('#verifyCurrentArtist').show();
 		return;
-		}
-}
+		};
+};
 
 function loadArtistByNumber (artistID, artistIDList) {
 
@@ -54,20 +127,54 @@ function loadArtistByNumber (artistID, artistIDList) {
 	  event.preventDefault();
 	  console.log("Verify Clicked");
 	  //get location
+	  getArtistLocation();
+	  // console.log(artistID);
+	  // console.log(artistData);
+	  var newAttendance = artistData["attendence"];
+	  // console.log(newAttendance);
+	  console.log(artistAttendance);
+
+	  // console.log(artistAttendance != []);
+
+	  if (artistAttendance != []) {
+	  	// check to see if attendance is unique
+	  		var countArtist = artistData.attendence;
+	  		var countArtistAttendance = Object.keys(countArtist).length;
+	  		console.log(countArtistAttendance)
+	  		// console.log(Object.keys(countArtist).length);
+	  		// for (var i = 0; i < countArtistAttendance; i++) {
+	  			var attendanceInstance = Object.values(countArtist);
+	  			// console.log(typeof attendanceInstance[i]);
+	  			// console.log(typeof artistAttendance);
+	  			// console.log(attendanceInstance[i]);
+	  			// console.log(attendanceInstance[i].attendDate);
+	  			// console.log(attendanceInstance[countArtistAttendance-1].attendPlace);
+	  			// console.log(artistAttendance.attendDate);
+	  			// console.log(artistAttendance.attendPlace);
+	  			// console.log(artistAttendance.attendPlace != attendanceInstance[i].attendPlace);
+	  			// console.log(String(artistAttendance.attendDate) != String(attendanceInstance[i].attendDate));
+	  			// console.log(artistAttendance);
+	  			// console.log(artistAttendance != attendanceInstance[i]);
+	  			// console.log(i);
+	  			// console.log(artistAttendance.attendPlace != attendanceInstance[i].attendPlace || String(artistAttendance.attendDate) != String(attendanceInstance[i].attendDate));
+	  			if (artistAttendance.attendPlace != attendanceInstance[countArtistAttendance-1].attendPlace || String(artistAttendance.attendDate) != String(attendanceInstance[countArtistAttendance-1].attendDate)) {
+	  				// console.log(artistAttendance);
+	  				console.log("unique");
+	  				// console.log(artistID);
+
+	  				//update attend/date
+			  		refArtists.child(artistID).child("attendence").push(artistAttendance);
+	  				// return;
+	  			} else {
+	  				console.log("Already checked in");
+			  		// return;
+	  			};
+
+	  		// };
+		};
   return;
 	});
 
-	// beltState = artistData.belt;
-	//populate belt button
-	// getBeltList();
-	// 	for (var i = 0; i < BeltList.length; i++) {
-	// 		// console.log(BeltList[i]);
-	// // $(listOBelts).append('<button type="button" class="btn btn-default">' + BeltList[i] + '</button><br>');
-	// $(listOBelts).append( '<li><button type="button" class="btn-xs btn-default btn-info" id="beltChoice" value="' + BeltList[i] + '">' + BeltList[i] + '</button></li>');
-	// //<button type="button" class="btn btn-default">Left</button>
-	// 	};
-
- // return;
 
 }
 
@@ -124,215 +231,3 @@ $(function() {
 });
 
 
-
-
-//
-//
-//
-// // var ref = new Firebase("https://sizzling-torch-5132.firebaseio.com/");
-// // var refTKD = ref.child('TKD');
-// // var refArtists = refTKD.child('artistID');
-// // var refBelts = refTKD.child('belt ranks');
-// // var TKDArtistList = [];
-// // var TKDList = [];
-// // var BeltList;
-// // var allArtists = [];
-// // var artistID = [];
-// // var artistIDList = [];
-// // var artist = [];
-// // var intArtistId;
-// // var newArtistID = {};
-// var artistNumberEntered;
-
-// $(function() {
-// 	console.log("get inform");
-// // get inform
-// var getArtistNumber = document.getElementById("getArtistNumber");
-
-// var updateNumberItems = getArtistNumber.querySelectorAll("li");
-// var updateNumberInputs = getArtistNumber.querySelectorAll("input");
-
-
-// 	//artist data
-//   // getUpdatedArtistList();
-
-
-// for (var i = 0; i < updateNumberItems.length; i++) {
-//   updateNumberItems[i].addEventListener("click", editItem);
-//   // updateInputs[i].addEventListener("blur", updateItem);
-//   updateNumberInputs[i].addEventListener("keypress", itemKeypress);
-// }
-
-// // $(promoBtnY).click(function() {
-// // 	promoState = "Yes";
-// // 	$(promoBtnN).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(promoBtnN).click(function() {
-// // 	promoState = "No";
-// // 	$(promoBtnY).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(formsBtnY).click(function() {
-// // 	formsState = "Yes";
-// // 	$(formsBtnN).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(formsBtnN).click(function() {
-// // 	formsState = "No";
-// // 	$(formsBtnY).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(oneStepsBtnY).click(function() {
-// // 	oneStepsState = "Yes";
-// // 	$(oneStepsBtnN).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(oneStepsBtnN).click(function() {
-// // 	oneStepsState = "No";
-// // 	$(oneStepsBtnY).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(breakBtnY).click(function() {
-// // 	breakState = "Yes";
-// // 	$(breakBtnN).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(breakBtnN).click(function() {
-// // 	breakState = "No";
-// // 	$(breakBtnY).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(memBtnY).click(function() {
-// // 	memState = "Yes";
-// // 	$(memBtnN).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(memBtnN).click(function() {
-// // 	memState = "No";
-// // 	$(memBtnY).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(timeBtnY).click(function() {
-// // 	timeState = "Yes";
-// // 	$(timeBtnN).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(timeBtnN).click(function() {
-// // 	timeState = "No";
-// // 	$(timeBtnY).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(otherBtnY).click(function() {
-// // 	otherState = "Yes";
-// // 	$(otherBtnN).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(otherBtnN).click(function() {
-// // 	otherState = "No";
-// // 	$(otherBtnY).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(attendBtnY).click(function() {
-// // 	attendState = "Yes";
-// // 	$(attendBtnN).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// // $(attendBtnN).click(function() {
-// // 	attendState = "No";
-// // 	$(attendBtnY).removeClass('btn-info');
-// // 	updateArtist();
-// // });
-
-// //get belt data
-// // $("button").click(function() {
-// // 	// console.log("clicked");
-// // 		$('button').click(function(event) {
-// // 			// console.log("belt Choice");
-// // 	var checkThis = $(this)[0].parentNode;
-// // 		// console.log(checkThis);
-// // 		var checkThat = checkThis.childNodes[0].value;
-// // 		// console.log(checkThat);
-// // 		beltState = checkThat;
-// // 		updateArtist();
-// // 		});
-// // });
-
-// function editItem() {
-//   this.className = "edit";
-//   var input = this.querySelector("input");
-//   input.focus();
-
-//   input.setSelectionRange(0, input.value.length);
-// }
-
-// function updateItem() {
-//   this.previousElementSibling.innerHTML = this.value;
-//   this.parentNode.className = "";
-// }
-
-// function itemKeypress(event) {
-//   if (event.which === 13) {
-//   	console.log('Enter');
-//     // updateItem.call(this);
-//     // updateArtist();
-//   }
-// }
-
-// //MA updater
-// // function updateArtist () {
-
-// // console.log(updateInputs);
-
-// 	// artist = {
-// 	// 	firstName: updateInputs[1].value,
-// 	// 	lastName: updateInputs[2].value,
-// 	// 	email: updateInputs[3].value,
-// 	// 	belt: beltState,
-// 	// 	readyForPromotion: promoState,
-// 	// 	readyForms: formsState,
-// 	// 	readyOneSteps: oneStepsState,
-// 	// 	readyBreaking: breakState,
-// 	// 	readyMemorization: memState,
-// 	// 	readyTime: timeState,
-// 	// 	readyOther: otherState,
-// 	// 	attendence: attendState
-// 	// }
-
-// // console.log(artist);
-
-// 		// refArtists.child(artistID).set(artist);
-
-
-// 	// return artist;
-// // }
-
-//    // $(updateSubmitButton).on('click', function () {
-//    //   updateArtist();
-//    //   console.log("Clicked");
-//    // });
-
-// $(artistIDSubmit).on('click', function () {
-//  // updateArtist();
-//  console.log("Artist Number Clicked");
-//  // console.log($("#ArtistNumber").value)
-//  // artistNumberEntered = $("ArtistNumber").value;
-//  // console.log(artistNumberEntered);
-// });
-
-// });

@@ -142,6 +142,10 @@ function loadArtist (artistID, artistIDList) {
 		attendState = "No";
 		$(attendBtnN).addClass('btn-info');
 	}
+	var countArtist = artistData.attendence;
+
+	// get attendance counts
+	console.log(Object.keys(countArtist).length)
 
 	//populate belt button
 	getBeltList();
