@@ -134,18 +134,20 @@ function loadArtist (artistID, artistIDList) {
 		$(otherBtnN).addClass('btn-info');
 	}
 	//Attend Buttons
-	if (artistData.attendence === "Yes") {
+	var countArtist = artistData.attendence;
+	// get attendance counts
+	var totalAttendances = Object.keys(countArtist).length;
+	// console.log(Object.keys(countArtist).length)
+
+
+	if (totalAttendances >= 6) {
 		attendState = "Yes";
 		$(attendBtnY).addClass('btn-info');
 	}
-	if (artistData.attendence === "No") {
+	if (totalAttendances < 6) {
 		attendState = "No";
 		$(attendBtnN).addClass('btn-info');
 	}
-	var countArtist = artistData.attendence;
-
-	// get attendance counts
-	console.log(Object.keys(countArtist).length)
 
 	//populate belt button
 	getBeltList();
@@ -272,7 +274,7 @@ $(attendBtnY).click(function() {
 $(attendBtnN).click(function() {
 	attendState = "No";
 	$(attendBtnY).removeClass('btn-info');
-	updateArtist();
+	// updateArtist();
 });
 
 //get belt data
