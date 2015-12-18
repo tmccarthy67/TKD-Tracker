@@ -138,7 +138,7 @@ function loadArtistByNumber (artistID, artistIDList) {
 
 	  if (artistAttendance != []) {
 	  	// check to see if attendance is unique
-	  		var countArtist = artistData.attendence;
+	  		var countArtist = artistData.attendances;
 	  		var countArtistAttendance = Object.keys(countArtist).length;
 	  		console.log(countArtistAttendance)
 	  		// console.log(Object.keys(countArtist).length);
@@ -163,7 +163,7 @@ function loadArtistByNumber (artistID, artistIDList) {
 	  				// console.log(artistID);
 
 	  				//update attend/date
-			  		refArtists.child(artistID).child("attendence").push(artistAttendance);
+			  		refArtists.child(artistID).child("attendances").push(artistAttendance);
 	  				// return;
 	  			} else {
 	  				console.log("Already checked in");
@@ -215,7 +215,7 @@ function getUpdatedArtistList() {
 $(function() {
 	console.log("get Artist Number");
 
-	// submit button
+	// Correct Artist submit button
 	$( "#getArtistNumber" ).submit(function( event ) {
 	  event.preventDefault();
 	  console.log("Clicked");
@@ -227,6 +227,17 @@ $(function() {
   getUpdatedArtistList();
 	});
 
+	// wrong Artist submit button
+	$( "#wrongArtistSubmit" ).submit(function( event ) {
+	  event.preventDefault();
+	  console.log("Wrong Clicked");
+	  // get Artist ID number
+	  artistEntered = "";
+	    // console.log(artistEntered);
+
+	// artist data
+  // getUpdatedArtistList();
+	});
 
 });
 

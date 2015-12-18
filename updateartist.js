@@ -329,12 +329,13 @@ function updateArtist () {
 		readyMemorization: memState,
 		readyTime: timeState,
 		readyOther: otherState,
-		attendence: attendState
+		attendence: attendState,
+		attendances: ""
 	}
 
 // console.log(artist);
 
-		refArtists.child(artistID).set(artist);
+		refArtists.child(artistID).update(artist);
 
 
 	// return artist;
