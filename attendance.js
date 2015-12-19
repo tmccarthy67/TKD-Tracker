@@ -139,19 +139,27 @@ function loadArtistByNumber (artistID, artistIDList) {
 	  if (artistAttendance != []) {
 	  	// check to see if attendance is unique
 	  		var countArtist = artistData.attendances;
+	  		console.log(countArtist);
 	  		var countArtistAttendance = Object.keys(countArtist).length;
-	  		console.log(countArtistAttendance)
+	  		// console.log(countArtistAttendance)
 	  		// console.log(Object.keys(countArtist).length);
 	  		// for (var i = 0; i < countArtistAttendance; i++) {
 	  			var attendanceInstance = Object.values(countArtist);
+	  			console.log(attendanceInstance);
+	  			// if (attendanceInstance != []) {
+	  				// console.log("testing");
+				  		// refArtists.child(artistID).child("attendances").push(artistAttendance);
+	  			// };
+	  			// console.log(artistAttendance);
+	  			// console.log(attendanceInstance);
 	  			// console.log(typeof attendanceInstance[i]);
 	  			// console.log(typeof artistAttendance);
 	  			// console.log(attendanceInstance[i]);
 	  			// console.log(attendanceInstance[i].attendDate);
-	  			// console.log(attendanceInstance[countArtistAttendance-1].attendPlace);
+	  			console.log(attendanceInstance[countArtistAttendance-1].attendPlace);
 	  			// console.log(artistAttendance.attendDate);
-	  			// console.log(artistAttendance.attendPlace);
-	  			// console.log(artistAttendance.attendPlace != attendanceInstance[i].attendPlace);
+	  			console.log(artistAttendance.attendPlace);
+	  			// console.log(artistAttendance.attendPlace != attendanceInstance[countArtistAttendance-1].attendPlace);
 	  			// console.log(String(artistAttendance.attendDate) != String(attendanceInstance[i].attendDate));
 	  			// console.log(artistAttendance);
 	  			// console.log(artistAttendance != attendanceInstance[i]);
@@ -240,5 +248,4 @@ $(function() {
 	});
 
 });
-
 
