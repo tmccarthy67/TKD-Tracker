@@ -330,7 +330,7 @@ function updateArtist () {
 		readyTime: timeState,
 		readyOther: otherState,
 		attendence: attendState,
-		attendances: ""
+		attendances: " "
 	}
 
 // console.log(artist);

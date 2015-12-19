@@ -34,10 +34,15 @@ Object.values = function(object) {
   return values;
 }
 
+function artistCheckedIn () {
+	alert("You are checked in!");
+}
+
 function getArtistLocation () {
 	// console.log("getArtistLocation");
 	if(geo_position_js.init()){
 		geo_position_js.getCurrentPosition(success_callback,error_callback,{enableHighAccuracy:true});
+		return(artistAttendance);
 	}
 	else{
 		console.log("Functionality not available");
@@ -133,10 +138,11 @@ function loadArtistByNumber (artistID, artistIDList) {
 	  var newAttendance = artistData["attendence"];
 	  // console.log(newAttendance);
 	  console.log(artistAttendance);
+		// console.log(typeof artistAttendance);
+	 //  console.log(artistAttendance != []);
+	 //  console.log(artistAttendance != "");
 
-	  // console.log(artistAttendance != []);
-
-	  if (artistAttendance != []) {
+	  if (artistAttendance != "") {
 	  	// check to see if attendance is unique
 	  		var countArtist = artistData.attendances;
 	  		console.log(countArtist);
@@ -172,10 +178,12 @@ function loadArtistByNumber (artistID, artistIDList) {
 
 	  				//update attend/date
 			  		refArtists.child(artistID).child("attendances").push(artistAttendance);
-	  				// return;
+			  		artistCheckedIn();
+	  				return;
 	  			} else {
+	  				artistCheckedIn();
 	  				console.log("Already checked in");
-			  		// return;
+			  		return;
 	  			};
 
 	  		// };

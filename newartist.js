@@ -59,8 +59,10 @@ $("#createSubmitButton").click(function(){
 	createNewArtist();
 	generateArtistID(artistIDList);
 	createArtist(artistID,artist);
+	localStorage.setItem("artistID", artistID);
 	window.open("updateartist.html","_self")
 	updateArtist(artistID, artist);
+
 
 });
 
