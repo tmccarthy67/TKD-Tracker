@@ -83,9 +83,13 @@ function getArtistLocation () {
 	function checkLocation(latitude, longitude) {
 		// ainsworthIA = {41.2903, -91.5542};
 		// columbusJunctionIA = {41.2783, -91.3625};
+		// dubuqueIA = {42.5043, -90.6869}
 		// lat=41.29;lon=-91.55
-		// console.log("longitude " + longitude);
-		// console.log("latitude " + latitude);
+		console.log("longitude " + longitude);
+		console.log("latitude " + latitude);
+
+		//longitude -90.71
+		//latitude 42.55
 		if (latitude > 41.28 && latitude < 41.30 && longitude > -91.56 && longitude < -91.54) {
 			currentCity = "Ainsworth";
 			// console.log(currentCity);
@@ -93,6 +97,11 @@ function getArtistLocation () {
 		};
 		if (latitude > 41.26 && latitude < 41.38 && longitude > -91.37 && longitude < -91.35) {
 			currentCity = "Columbus Junction";
+			// console.log(currentCity);
+			return currentCity;
+		};
+		if (latitude > 42.4 && latitude < 42.7 && longitude > -90.9 && longitude < -90.5) {
+			currentCity = "Dubuque";
 			// console.log(currentCity);
 			return currentCity;
 		};

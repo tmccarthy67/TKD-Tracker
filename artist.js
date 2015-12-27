@@ -1,4 +1,5 @@
-console.log("Update artist");
+console.log("Artist");
+//variables
 var promoState;
 var formsState;
 var oneStepsState;
@@ -9,17 +10,90 @@ var otherState;
 var attendState;
 var BeltList;
 var beltState;
-var artistEntered;
+
+//initial state
+  $('#newArtist').show();
+  $('#updateArtist').hide();
+
+
+$(function() {
+//get inform
+var newArtistForm = document.getElementById("newArtistForm");
+
+var items = newArtistForm.querySelectorAll("li");
+var inputs = newArtistForm.querySelectorAll("input");
+
+for (var i = 0; i < items.length; i++) {
+  items[i].addEventListener("click", editItem);
+  inputs[i].addEventListener("blur", updateItem);
+  inputs[i].addEventListener("keypress", itemKeypress);
+}
+
+function editItem() {
+  this.className = "edit";
+  var input = this.querySelector("input");
+  input.focus();
+  // input.setSelectionRange(0, input.value.length);
+}
+
+function updateItem() {
+  // this.previousElementSibling.innerHTML = this.value;
+  this.parentNode.className = "";
+}
+
+function itemKeypress(event) {
+  if (event.which === 13) {
+    updateItem.call(this);
+  }
+}
+
+//MA generator
+function createNewArtist(){
+
+// console.log(inputs);
+
+	artist = {
+		firstName: inputs[0].value,
+		lastName: inputs[1].value,
+		email: inputs[2].value,
+		belt: "white",
+		readyForPromotion: "No",
+		readyForms: "No",
+		readyOneSteps: "No",
+		readyBreaking: "No",
+		readyMemorization: "No",
+		readyTime: "No",
+		readyOther: "No",
+		attendence: "No",
+		attendances: " "
+	}
+
+	return artist;
+}
+
+
+$("#createSubmitButton").click(function(){
+	createNewArtist();
+	generateArtistID(artistIDList);
+	createArtist(artistID,artist);
+	// localStorage.setItem("artistID", artistID);
+	// window.open("updateartist.html","_self")
+  $('#newArtist').hide();
+  $('#updateArtist').show();
+	updateArtist(artistID, artist);
+
+
+});
+
+});
+
+//update
+// console.log("Update artist");
 
 // var ref = new Firebase("https://sizzling-torch-5132.firebaseio.com/");
 // var refTKD = ref.child('TKD');
 // var refBelts = refTKD.child('belt ranks');
 // var BeltList;
-
-//initial state
-  $('#getArtistNumber').show();
-  $('#updateArtist').hide();
-
 
 function getBeltList () {
 	refBelts.on("value", function(snapshot) {
@@ -50,19 +124,14 @@ function getUpdatedArtistList() {
 }
 
 function getCurrentArtist(artistIDList) {
-	console.log(artistEntered);
-	artistID = artistEntered;
-	console.log(artistID);
-		loadArtist(artistID, artistIDList);
-
-	// // Check browser support
+	// Check browser support
 	// if (typeof(Storage) !== "undefined") {
-	// 	// Retrieve
-	// 	artistID = localStorage.getItem("artistID");
-	// 	// console.log(artistID);
-	// 	// return(artistID);
-	// 		// console.log(artistID);
-	// 		loadArtist(artistID, artistIDList);
+		// Retrieve
+		// artistID = localStorage.getItem("artistID");
+		// console.log(artistID);
+		// return(artistID);
+			// console.log(artistID);
+			loadArtist(artistID, artistIDList);
 
 	// } else {
 	//     document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
@@ -145,12 +214,11 @@ function loadArtist (artistID, artistIDList) {
 		$(otherBtnN).addClass('btn-info');
 	}
 	//Attend Buttons
-	var countArtist = artistData.attendances;
+	var countArtist = artistData.attendence;
 	// get attendance counts
 	var totalAttendances = Object.keys(countArtist).length;
 	// console.log(Object.keys(countArtist).length)
 
-// console.log(totalAttendances);
 
 	if (totalAttendances >= 6) {
 		attendState = "Yes";
@@ -184,7 +252,7 @@ var updateInputs = artistFormUpdater.querySelectorAll("input");
 
 
 	//artist data
-  // getUpdatedArtistList();
+  getUpdatedArtistList();
 
 
 for (var i = 0; i < updateItems.length; i++) {
@@ -341,8 +409,8 @@ function updateArtist () {
 		readyMemorization: memState,
 		readyTime: timeState,
 		readyOther: otherState,
-		attendence: attendState//,
-		// attendances: " "
+		attendence: attendState,
+		attendances: " "
 	}
 
 // console.log(artist);
@@ -357,25 +425,5 @@ function updateArtist () {
      updateArtist();
      console.log("Clicked");
    });
-
-});
-
-$(function() {
-	console.log("get Artist Number");
-
-	// Correct Artist submit button
-	$( "#getArtistNumber" ).submit(function( event ) {
-	  event.preventDefault();
-	  console.log("Clicked");
-	  // get Artist ID number
-	  artistEntered = $('#ArtistNumber').val();
-	    console.log(artistEntered);
-  $('#getArtistNumber').hide();
-  $('#updateArtist').show();
-
-
-	// artist data
-  getUpdatedArtistList();
-	});
 
 });

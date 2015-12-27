@@ -22,6 +22,20 @@ li.edit input {
 	color:white;
 }
 
+.btn.active, .btn:active {
+    background-color: #39B3D7;
+}
+
+.btn.active a {
+	color:white;
+	text-decoration: none;
+}
+
+.btn.active:hover a, .btn:hover a {
+	color:blue;
+	text-decoration: none;
+}
+
 #listOBelts button {
 	text-align: center;
 	width:10em;
@@ -38,3 +52,22 @@ li.edit input {
     overflow-x: hidden;
 }
 
+.aboutInformation {
+	/* top | horizontal | bottom */
+	padding: 1em 200px 0;
+}
+
+.classInfo {
+	padding-left: 10px;
+}
+
+.aboutList {
+	text-align: left;
+  color: #39B3D7;
+  font-size: 1.5em
+}
+
+.footer {
+	color:red;
+	font-size: 10px;
+}

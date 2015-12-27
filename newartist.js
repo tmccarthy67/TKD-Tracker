@@ -41,14 +41,14 @@ console.log(inputs);
 		lastName: inputs[1].value,
 		email: inputs[2].value,
 		belt: "white",
-		readyForPromotion: false,
-		readyForms: false,
-		readyOneSteps: false,
-		readyBreaking: false,
-		readyMemorization: false,
-		readyTime: false,
-		readyOther: false,
-		attendence: false
+		readyForPromotion: "No",
+		readyForms: "No",
+		readyOneSteps: "No",
+		readyBreaking: "No",
+		readyMemorization: "No",
+		readyTime: "No",
+		readyOther: "No",
+		attendence: "No"
 	}
 
 	return artist;
