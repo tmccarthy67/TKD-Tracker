@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  color: #000;
+  background: #fff;
+  background-image:url(../images/TMCBKGD.png);
+  background-repeat:repeat-x;
+}
+html, body, p, th, td, li, dd, dt {
+  font: 1em Arial, Helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.2em ; }
+h4 { font-size: 1.0em; }
+h5 { font-size: 0.9em; }
+h6 { font-size: 0.8em; }
+a:link { color: #00f; }
+a:visited { color: #009; }
+a:hover { color: #06f; }
+a:active { color: #0cf; }
+
+#Container {
+	margin-left:auto;
+	margin-right:auto;
+	width:790px;
+	text-align:center;
+	}
+
+.Banner {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:790x;
+	height:188px;
+}
+.Nav {
+	position:absolute;
+	left:0px;
+	top:150px;
+	width:790px;
+}
+.Body {
+	position:absolute;
+	left:0px;
+	top:200px;
+	width:790px;
+	height:auto;
+}
+#Left {
+	width:200px;
+	border:#000000 solid 1.5px;
+	float:left;
+	background:#FFFFFF;
+	color:#000;
+}
+#Main {
+	width:575px;
+	border:#000000 solid 1.5px;
+	float:right;
+	background: #FFFFFF;
+	color:#000;
+}
+.footer {
+	position:absolute;
+	bottom:0;
+	margin-left:auto;
+	margin-right:auto;
+	width:790px;
+	height:50px;
+}
+	
+#Nav ul {
+	padding-left:0 px;
+	padding-right:0 px;
+	margin-left: 0;
+	font: bold 14px Arial;
+}
+
+#Nav ul li {
+	list-style: none;
+	margin: 0;
+	display: inline;
+	line-height:10px;
+}
+
+#Nav ul li a {
+	padding: 0px 1.8em;
+	margin-left: 0px;
+	border: 1.5px solid #000;
+	background: #fff;
+	text-decoration: none;
+}
+
+#footer a {
+	text-decoration: none;
+}
+
+.copyright {
+	font-size:12px;
+	color:#000;
+}
+
+.header {
+font-weight: bold;
+color:#000066;
+font-size: 1.2em;
+}
+
+#rules {
+text-align: left;
+}
+ 

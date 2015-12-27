@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-9"?>
+<root>
+	<menu txt="Home" link="index.htm">
+	</menu>
+	<menu txt="Infromation">
+		<submenu txt="School" link="school.htm"/>
+		<submenu txt="Instructors" link="instructors.htm"/>
+		<submenu txt="Do Jang Rules" link="rules.htm"/>
+		<submenu txt="Attendance policy" link="policy.htm"/>
+		<submenu txt="Tae Kwon Do" link="tkd.htm"/>
+		<submenu txt="Korea" link="korea.htm"/>
+	</menu>
+	<menu txt="Testing">
+		<submenu txt="Belt Requirements" link="belts.htm"/>
+		<submenu txt="Forms" link="forms.htm"/>
+		<submenu txt="One Steps" link="onesteps.htm"/>
+		<submenu txt="Sa Ju Kong Bongs" link="sjkb.htm"/>
+		<submenu txt="Breaking" link="breaking.htm"/>
+	</menu>
+	<menu txt="Photos" link="photos.htm">
+	</menu>
+	<menu txt="Terms" link="terms.htm">
+	</menu>
+	<menu txt="Contact" link="mailto:TDK@reddeerdesign.com">
+	</menu>
+</root>
