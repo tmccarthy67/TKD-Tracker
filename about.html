@@ -18,25 +18,31 @@
         <nav>
           <ul class="nav nav-pills pull-right">
             <li>
-            <button class="btn"><a href="index.html">Home</a></button>
+            <button class="btn active"><a href="index.html">Home</a></button>
             </li>
             <li>
-            <button class="btn active"><a href="about.html">About</a></button>
+                <div class="dropdown">
+                  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Resources
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu btn" aria-labelledby="dropdownMenu1" id="TKDResources">
+                  </ul>
+                </div>
             </li>
-            <li>
-								<div class="dropdown">
-								  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								    Dropdown
-								    <span class="caret"></span>
-								  </button>
-								  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-									<li><a href="login.html">Login</a></li>
-									<li><a href="attendance.html">Track attendance</a></li>
-									<li><a href="newartist.html">Add new artist</a></li>
-									<li><a href="updateartist.html">Update artist</a></li>
-								  </ul>
-								</div>
+             <li>
+                <div class="dropdown">
+                  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    About
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu btn" aria-labelledby="dropdownMenu1" id="ClassInfo">
+                  </ul>
+                </div>
+            </li>            <li>
+            <button class="btn"><a href="login.html">Login</a></button>
             </li>
+
           </ul>
         </nav>
         <h3 class="text-muted">Twin Rivers Christian Martial Arts</h3>
@@ -77,11 +83,13 @@
 	<!-- Latest compiled and minified jquery -->
 	<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<!-- Firebase script -->
 	<script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
 	<!-- <script src="firebase.js"></script> -->
 	<!-- TKD Tracker javascript -->
 	<script src="js/tkdtracker.js"></script>
+  <!-- menu script -->
+  <script src="js/menu.js"></script>
 </body>
 </html>

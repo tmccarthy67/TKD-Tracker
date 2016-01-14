@@ -21,22 +21,28 @@
             <button class="btn active"><a href="index.html">Home</a></button>
             </li>
             <li>
-            <button class="btn"><a href="about.html">About</a></button>
-            </li>
-            <li>
 								<div class="dropdown">
-								  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								    Dropdown
+								  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    Resources
 								    <span class="caret"></span>
 								  </button>
-								  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-									<li><a href="login.html">Login</a></li>
-									<li><a href="attendance.html">Track attendance</a></li>
-									<li><a href="newartist.html">Add new artist</a></li>
-									<li><a href="updateartist.html">Update artist</a></li>
+								  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="TKDResources">
 								  </ul>
 								</div>
             </li>
+             <li>
+								<div class="dropdown">
+								  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								    About
+								    <span class="caret"></span>
+								  </button>
+								  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="ClassInfo">
+								  </ul>
+								</div>
+            </li>            <li>
+            <button class="btn"><a href="login.html">Login</a></button>
+            </li>
+
           </ul>
         </nav>
         <h3 class="text-muted">Twin Rivers Christian Martial Arts</h3>
@@ -44,30 +50,45 @@
 
       <div class="jumbotron">
         <h1>Tae Kwon Do</h1>
-        <p class="lead">Tae KWon Do is a Korean martial art, developed by General Choi.</p>
+        <p class="TKDlist">Tae Kwon Do is a Korean martial art, developed by General Choi.  Tae Kwon Do (TKD) is loosely translated as "the way of the foot and fist". It was a blend of many martial arts styles, old and new.</p>
+        <p class="TKDList">Amoung the many benifits of practicing TKD, it developes coordination, balence and relaxation. It can also be a very effective form of self-defence.</p>
       </div>
 
       <div class="row marketing">
         <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+          <h4>Forms</h4>
+          <p>Chang Hon (also called Chang Hun, Chang 'On or Chon-Ji) forms developed by General Choi Hong Hi.<br/>
+          <a class="btn btn-sm btn-info" href="forms.html" role="button">Forms</a>
+          </p>
+
 
           <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.<br/>
+          <a class="btn btn-sm btn-info" href="#" role="button">Sign up today</a>
+          </p>
+
 
           <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.<br/>
+          <a class="btn btn-sm btn-info" href="#" role="button">Sign up today</a>
+          </p>
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-sm-6">
           <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.<br/>
+          <a class="btn btn-sm btn-info" href="#" role="button">Sign up today</a>
+          </p>
 
           <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.<br/>
+          <a class="btn btn-sm btn-info" href="#" role="button">Sign up today</a>
+          </p>
 
           <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.<br/>
+          <a class="btn btn-sm btn-info" href="#" role="button">Sign up today</a>
+          </p>
         </div>
       </div>
 
@@ -84,6 +105,8 @@
 	<!-- Firebase script -->
 	<script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
 	<!-- <script src="firebase.js"></script> -->
+	<!-- menu script -->
+	<script src="js/menu.js"></script>
 	<!-- TKD Tracker javascript -->
 	<script src="js/tkdtracker.js"></script>
 </body>

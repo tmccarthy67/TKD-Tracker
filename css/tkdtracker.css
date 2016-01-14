@@ -14,10 +14,6 @@ li.edit input {
     /*display: initial;*/
 }
 
-.btn:hover {
-	color:blue;
-}
-
 .btn-info {
 	color:white;
 }
@@ -29,6 +25,14 @@ li.edit input {
 .btn.active a {
 	color:white;
 	text-decoration: none;
+}
+
+li.dropList a:hover {
+	color:blue;
+}
+
+.btn:hover {
+	color:blue;
 }
 
 .btn.active:hover a, .btn:hover a {
@@ -48,8 +52,10 @@ li.edit input {
 
 .dropdown-menu {
     height: auto;
-    max-height: 200px;
+    max-height: 250px;
     overflow-x: hidden;
+    margin: 0;
+    padding:0;
 }
 
 .aboutInformation {
@@ -67,7 +73,32 @@ li.edit input {
   font-size: 1.5em
 }
 
+.dropList {
+	text-align: left;
+	color: #39B3D7;
+	font-size: 1em;
+}
+
+.dropdown-menu {
+  min-width:112px;
+  width:100%;
+}
+
+.dropList button {
+	width: 110px;
+	border:1px black solid;
+}
+
 .footer {
 	color:red;
+	font-size: 8px;
+}
+
+.TKDlist {
+	text-align:left;
 	font-size: 10px;
+}
+
+.beltList {
+	color:red;
 }
