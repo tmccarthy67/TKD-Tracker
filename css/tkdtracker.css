@@ -19,7 +19,11 @@ li.edit input {
 }
 
 .btn.active, .btn:active {
-    background-color: #39B3D7;
+   background-color: #3A83C2;
+}
+
+li.droplist.active {
+	background-color: #3A83C2;
 }
 
 .btn.active a {

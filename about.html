@@ -1,10 +1,12 @@
 <!-- <!doctype html> -->
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>TKD Tracker</title>
+  <meta charset="UTF-8">
+  <title>TKD Tracker</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="css/jumbotron-narrow.css">
     <!-- TKD css -->
@@ -32,7 +34,7 @@
             </li>
              <li>
                 <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown active" aria-haspopup="true" aria-expanded="true">
+                  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     About
                     <span class="caret"></span>
                   </button>
@@ -84,16 +86,19 @@
 
     </div>
 
-	<!-- Latest compiled and minified jquery -->
-	<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	<!-- Firebase script -->
-	<script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
-	<!-- <script src="firebase.js"></script> -->
-	<!-- TKD Tracker javascript -->
-	<script src="js/tkdtracker.js"></script>
+  <!-- Latest compiled and minified jquery -->
+  <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <!-- Firebase script -->
+  <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <!-- <script src="firebase.js"></script> -->
+  <!-- TKD Tracker javascript -->
+  <script src="js/tkdtracker.js"></script>
   <!-- menu script -->
   <script src="js/menu.js"></script>
+  <script>
+    $( "#classInfo li:nth-child(1)" ).addClass('active');
+  </script>
 </body>
 </html>
