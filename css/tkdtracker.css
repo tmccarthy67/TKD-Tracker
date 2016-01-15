@@ -89,9 +89,10 @@ li.dropList a:hover {
 	border:1px black solid;
 }
 
-.footer {
+.footer, .footer a {
 	color:red;
 	font-size: 8px;
+	text-decoration: none;
 }
 
 .TKDlist {

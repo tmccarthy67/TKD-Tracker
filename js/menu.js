@@ -11,5 +11,5 @@ $("#ClassInfo").append('<li class="dropList"><a href="about.html">About TRCMA</a
 $("#ClassInfo").append('<li class="dropList"><a href="instructors.html">Instructors</a></li>');
 $("#ClassInfo").append('<li class="dropList"><a href="policy.html">Policy</a></li>');
 $("#ClassInfo").append('<li class="dropList"><a href="rules.html">Rules</a></li>');
-// $("#ClassInfo").append('<li class="dropList"><a href="login.html">Login</a></li>');
+$("#ClassInfo").append('<li class="dropList"><a href="pictures.html">Pictures</a></li>');
 
