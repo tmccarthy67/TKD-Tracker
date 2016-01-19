@@ -84,7 +84,7 @@ li.dropList a:hover {
 }
 
 .dropdown-menu {
-  min-width:112px;
+  /*min-width:112px;*/
   width:100%;
 }
 
