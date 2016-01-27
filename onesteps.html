@@ -22,6 +22,16 @@
             </li>
             <li>
 								<div class="dropdown">
+								  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								    About
+								    <span class="caret"></span>
+								  </button>
+								  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="ClassInfo">
+								  </ul>
+								</div>
+            </li>
+            <li>
+								<div class="dropdown">
 								  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								    Resources
 								    <span class="caret"></span>
@@ -30,16 +40,7 @@
 								  </ul>
 								</div>
             </li>
-             <li>
-								<div class="dropdown">
-								  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								    About
-								    <span class="caret"></span>
-								  </button>
-								  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="ClassInfo">
-								  </ul>
-								</div>
-            </li>            <li>
+            <li>
             <button class="btn"><a href="login.html">Login</a></button>
             </li>
 
@@ -50,6 +51,242 @@
 
     <div>
     	<h3>One Steps</h3>
+    </div>
+<!--     <div>
+    	<ul>
+	    	<li>White to Yellow - One-Steps 1-3</li>
+	    	<li>Yellow to Organge - One-Steps 1-6</li>
+	    	<li>Orange to Low Green - One-Steps 1-9</li>
+	    	<li>Low Green to High Green - One-Steps 1-9</li>
+	    	<li>High Green to Low Blue - One-Steps 1-9</li>
+	    	<li>Low Blue to High Blue - One-Steps 1-12</li>
+	    	<li>High Blue to 3rd Brown - One-Steps 1-12</li>
+	    	<li>3rd Brown to Temp 2nd Brown - One-Steps 1-14</li>
+	    	<li>Temp 2nd Brown to 1st Brown - One-Steps 1-14</li>
+	    	<li>1st Brown to Temp Black - 15 Step Sparring</li>
+    	</ul>
+    </div> -->
+
+<!-- <a href="#" onclick="toggle_visibility('foo');">Click here to toggle visibility of element #foo</a>
+<div id="foo">This is foo</div> -->
+
+
+    <div>
+    	<h4><button onclick="toggleIt('#OneStep1');">One Step 1</button></h4>
+    	<ul id="OneStep1">
+    		<li>Attacker - Right foot step forward, right punch to face.</li>
+    		<li>Defender - While moving right foot out, block with right inside block.</li>
+    		<li>Defender - Punch with left fist to abdominal area.</li>
+    		<li>Defender - Punch with right fist to abdominal area.</li>
+    		<li>Defender - Punch with left fist to face area (Ki-hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep2');">One Step 2</button></h4>
+    	<ul id="OneStep2">
+    		<li>Attacker - Right foot step forward, right punch to face.</li>
+    		<li>Defender - While moving left foot out, block with left inside block.</li>
+    		<li>Defender - Punch with right fist to abdominal area.</li>
+    		<li>Defender - Punch with left fist to abdominal area.</li>
+    		<li>Defender - Punch with right fist to face area (Ki-Hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep3');">One Step 3</button></h4>
+    	<ul id="OneStep3">
+    		<li>Attacker - Right foot step forward, right punch to face.</li>
+    		<li>Defender - While moving right foot out, grab arm/wrist with left hand.</li>
+    		<li>Defender - Strike the right bicep of the attacker with you right forearm.</li>
+    		<li>Defender - Attack with right elbow to ribcage.</li>
+    		<li>Defender - Attack with right backfist to face area.</li>
+    		<li>Defender - Punch abdomen with right fist.</li>
+    		<li>Defender - Uppercut to chin with right fist.</li>
+    		<li>Defender - Right elbow to chin area (Ki-Hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep4');">One Step 4</button></h4>
+    	<ul id="OneStep4">
+    		<li>Attacker - Right foot step forward, right punch to face.</li>
+    		<li>Defender - Move left foot out and do a "X" hand block.</li>
+    		<li>Defender - Grab the right wrist of the attacker with your right hand.</li>
+    		<li>Defender - Place your lefthand on the attacker's right bicep, twist/circular motion, and pull your attacker down toward the ground.</li>
+    		<li>Defender - Bring your right knee up toward the attacker's chest/face (Ki-Hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep5');">One Step 5</button></h4>
+    	<ul id="OneStep5">
+    		<li>Attacker - Right foot step forward, right punch to face.</li>
+    		<li>Defender - Lightly block with your left arm and hook the attacker's arm.</li>
+    		<li>Defender - Trap the attacker's right hand with your left arm and body.</li>
+    		<li>Defender - Move right leg in a circular motion (180 degrees) at the same time as trapping the arm.</li>
+    		<li>Defender - Do a right elbow strike to the attacker's kidneys.</li>
+    		<li>Defender - Do a left elbow strike to the ribcage.</li>
+    		<li>Defender - Do a left backfist to attacker's head (Ki-Hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep6');">One Step 6</button></h4>
+    	<ul id="OneStep6">
+    		<li>Attacker - Right foot step forward, right punch to face.</li>
+    		<li>Defender - Do a right circular scoop block to attacker's right punch.</li>
+    		<li>Defender - Do a left punch to the ribcage.</li>
+    		<li>Defender - Step outside the attacker's legs and do a right ridgehand to attacker's chest.</li>
+    		<li>Defender - Turn 180 degrees and do a left knife hand to attacker's chest.</li>
+    		<li>Defender - Grab the attacker's left shoulder with your right hand and do a right ankle sweep.</li>
+    		<li>Defender - Do a left punch to the face (Ki-Hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep7');">One Step 7</button></h4>
+    	<ul id="OneStep7">
+    		<li>Attacker - right front kick.</li>
+    		<li>Defender - left down block.</li>
+    		<li>Attacker - right punch.</li>
+    		<li>Defender - left scoop/outerside middle block.</li>
+    		<li>Defender - right puch to attacker's chest (Ki-Hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep8');">One Step 8</button></h4>
+    	<ul id="OneStep8">
+    		<li>Attacker - right front kick.</li>
+    		<li>Defender - left down block.</li>
+    		<li>Attacker - right punch.</li>
+    		<li>Defender - right inside block.</li>
+    		<li>Attacker - left puch/</li>
+    		<li>Defender - right hammerfist/outer block.</li>
+    		<li>Defender - left middle puch to attacker's chest (Ki-Hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep9');">One Step 9</button></h4>
+    	<ul id="OneStep9">
+    		<li>Attacker - right front kick.</li>
+    		<li>Defender - left down block.</li>
+    		<li>Attacker - right punch.</li>
+    		<li>Defender - right inside block.</li>
+    		<li>Attacker - left punch.</li>
+    		<li>Defender - right hammerfist/outside block.</li>
+    		<li>Defender - left punch.</li>
+    		<li>Attacker - right upper block.</li>
+    		<li>Attacker - left punch.</li>
+    		<li>Defender - right upper block.</li>
+    		<li>Defender - left punch (Ki-Hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep10');">One Step 10</button></h4>
+    	<ul id="OneStep10">
+    		<li>Attacker - right roundhouse kick.</li>
+    		<li>Defender - left outer block.</li>
+    		<li>Attacker - left punch.</li>
+    		<li>Defender - left inside block.</li>
+    		<li>Attacker - right punch.</li>
+    		<li>Defender - left outer block.</li>
+    		<li>Defender - right punch.</li>
+    		<li>Attacker - left scoop block.</li>
+    		<li>Defender - left punch.</li>
+    		<li>Attacker - right scoop block.</li>
+    		<li>Attacker - left punch.</li>
+    		<li>Defender - swing left arm down.</li>
+    		<li>Defender - swing arm around to block attacker's left arm.</li>
+    		<li>Defender - right punch (Ki-Hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep11');">One Step 11</button></h4>
+    	<ul id="OneStep11">
+    		<li>Attacker - right roundhouse kick.</li>
+    		<li>Defender - left outer block.</li>
+    		<li>Attacker - left punch.</li>
+    		<li>Defender - left inside block.</li>
+    		<li>Attacker - right punch.</li>
+    		<li>Defender - left outer block.</li>
+    		<li>Defender - right punch.</li>
+    		<li>Attacker - left scoop block.</li>
+    		<li>Defender - left punch.</li>
+    		<li>Attacker - right scoop block.</li>
+    		<li>Attacker - left punch.</li>
+    		<li>Defender - swing left arm down.</li>
+    		<li>Defender - swing arm around to block attacker's left arm.</li>
+    		<li>Defender - right punch.</li>
+    		<li>Attacker - bring  left elbow backwards to knock defender's arm out of the way</li>
+    		<li>Attacker - right punch.</li>
+    		<li>Defender - swing arm around to grab attacker's right arm.</li>
+    		<li>Defender - right stamp kick to back of attacker's right knee.</li>
+    		<li>Defender - right elbow to attacker's head.</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep12');">One Step 12</button></h4>
+    	<ul id="OneStep12">
+    		<li>Attacker - right roundhouse kick.</li>
+    		<li>Defender - left outer block.</li>
+    		<li>Attacker - left punch.</li>
+    		<li>Defender - puch left punch away with right hand.</li>
+    		<li>Attacker - right punch.</li>
+    		<li>Defender - push right punch away with left hand.</li>
+    		<li>Defender - step through by pivoting on left foot.</li>
+    		<li>Defender - right elbow to attacker's kidney.</li>
+    		<li>Defender - left elbow to ribcage.</li>
+    		<li>Defender - left backfist to face (Ki-Hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep13');">One Step 13</button></h4>
+    	<ul id="OneStep13">
+				<li>Attacker - right fron kick.</li>
+				<li>Defender - low "X" block.</li>
+				<li>Attacker - right punch.</li>
+				<li>Defender - right inside block.</li>
+				<li>Attacker - left punch.</li>
+				<li>Defender - right outer block.</li>
+				<li>Attacker - right punch.</li>
+				<li>Defender - left block attacker's right punch to the left.</li>
+				<li>Defender - right palm heelstrike to attacker's right collar bone.</li>
+				<li>Defender - right foot sweep attacker's right foot.</li>
+				<li>Defender - downward right elbow strike to back of attacker's neck (Ki-Hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#OneStep14');">One Step 14</button></h4>
+    	<ul id="OneStep14">
+				<li>Attacker - right front kick.</li>
+				<li>Defender - low "X" block.</li>
+				<li>Attacker - right punch.</li>
+				<li>Defender - right inside block.</li>
+				<li>Attacker - left punch.</li>
+				<li>Defender - right outer block.</li>
+				<li>Attacker - right punch.</li>
+				<li>Defender - left block attacker's right punch to the right.</li>
+				<li>Defender - step left and right roundhouse kick to midsection.</li>
+				<li>Defender -  without setting foot down, right sidekick to the back of the attacker's knee.</li>
+				<li>Defneder - right elbow or knife-hand stike to attacker's neck (Ki-Hap).</li>
+    	</ul>
+
+    	<h4><button onclick="toggleIt('#15Step');">15 Step Sparring</button></h4>
+    	<ul id="15Step">
+				<li>Attacker - right foot step forward to fighting stance.</li>
+				<li>Defender - left foot step backward to fighting stance.</li>
+				<li>Attacker - right arm middle punch and left arm upper block.</li>
+				<li>Defender - right knife hand to head and left hand puching block.</li>
+				<li>Attacker - right arm circle block</li>
+				<li>Attacker - </li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+    	</ul>
+
     </div>
 
       <footer class="footer">

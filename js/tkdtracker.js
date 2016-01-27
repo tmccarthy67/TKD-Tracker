@@ -14,6 +14,39 @@ var newArtistID = {};
 
 // console.log(refArtists);
 
+function hideAll () {
+	$("#OneStep1").hide();
+	$("#OneStep2").hide();
+	$("#OneStep3").hide();
+	$("#OneStep4").hide();
+	$("#OneStep5").hide();
+	$("#OneStep6").hide();
+	$("#OneStep7").hide();
+	$("#OneStep8").hide();
+	$("#OneStep9").hide();
+	$("#OneStep10").hide();
+	$("#OneStep11").hide();
+	$("#OneStep12").hide();
+	$("#OneStep13").hide();
+	$("#OneStep14").hide();
+	$("#15Step").hide();
+}
+
+hideAll();
+
+function toggleIt (id) {
+	var idStatus1 = $(id);
+	var idStatus2 = idStatus1[0];
+	var idStatus = idStatus2.style.display;
+
+	if (idStatus == "none") {
+		hideAll();
+		$(id).toggle();
+	};
+	if (idStatus == "block") {
+		$(id).toggle();
+	};
+};
 
 // function getArtistIDs (TKDList) {
 
